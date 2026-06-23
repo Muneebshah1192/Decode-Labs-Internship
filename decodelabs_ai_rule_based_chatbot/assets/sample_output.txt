@@ -1,0 +1,35 @@
+========================================================================
+🤖 LogicBot | DecodeLabs AI Project 1 | Rule-Based AI Chatbot
+========================================================================
+Ask about AI, Project 1, DecodeLabs, requirements, certificate fee, or submission tips.
+Type 'help' for examples. Type 'exit' or 'bye' to close.
+------------------------------------------------------------------------
+You: hello
+LogicBot: Hello! I’m LogicBot. I can help you understand AI Project 1, DecodeLabs questions, and rule-based chatbot concepts.
+
+You: what is project 1
+LogicBot: Project 1 is a Rule-Based AI Chatbot. It is a foundation task where the bot responds to predefined inputs using control flow and logic.
+
+You: requirements
+LogicBot: The core requirements are: handle greetings, handle exit commands, use if-else logic, and run in a continuous loop.
+
+You: what is decodelabs
+LogicBot: DecodeLabs is shown in this training kit as the organization powering the Batch 2026 Artificial Intelligence Project 1 industrial training task.
+
+You: certificate fee
+LogicBot: I should not guess about certificate payment. This project kit does not clearly say whether the certificate has a separate fee, so the safest step is to confirm through DecodeLabs’ official contact.
+
+You: my name is Muneeb
+LogicBot: Nice to meet you, Muneeb. I’ll remember your name during this session.
+
+You: what is my name
+LogicBot: Your name is Muneeb. I stored it with a simple session variable.
+
+You: trace
+LogicBot: Last response came from: session memory check. That is why this bot is easy to inspect.
+
+You: stats
+LogicBot: Session stats: 8 user messages, 69 exact inputs, 27 keyword groups, saved name: Muneeb.
+
+You: exit
+LogicBot: Goodbye! Keep your code clean, your logic clear, and your submission professional.

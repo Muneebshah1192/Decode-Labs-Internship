@@ -1,0 +1,8 @@
+[2026-06-23 14:27:43] User: hi
+[2026-06-23 14:27:43] LogicBot: Hello! I’m LogicBot. I can help you understand AI Project 1, DecodeLabs questions, and rule-based chatbot concepts.
+[2026-06-23 14:27:53] User: who am i
+[2026-06-23 14:27:53] LogicBot: I don’t have a rule for that yet. Try asking about Project 1, DecodeLabs, AI basics, requirements, or type 'help'.
+[2026-06-23 14:28:06] User: what about me
+[2026-06-23 14:28:06] LogicBot: I could not match that input. Try: 'what is Project 1', 'requirements', 'certificate fee', or 'submission tips'.
+[2026-06-23 14:28:21] User: tell me about decode labs
+[2026-06-23 14:28:21] LogicBot: DecodeLabs is shown in this training kit as the organization powering the Batch 2026 Artificial Intelligence Project 1 industrial training task.

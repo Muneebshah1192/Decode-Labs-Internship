@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero-shell">
+    <div class="hero-content">
+        <div class="eyebrow">Supervised Learning · KNN Classification · Iris Dataset</div>
+        <h1>Predict Iris flower species with a clean AI classification system.</h1>
+        <p class="hero-text">
+            Enter flower measurements and the trained KNN model will classify the sample as
+            Iris-setosa, Iris-versicolor, or Iris-virginica with confidence scores.
+        </p>
+        <div class="hero-actions">
+            <a href="#predictor" class="btn btn-primary">Start Prediction</a>
+            <a href="{{ url_for('about') }}" class="btn btn-secondary">View Project Flow</a>
+        </div>
+    </div>
+    <div class="model-card floating-card">
+        <div class="card-topline">Live Model Status</div>
+        <h2>{{ model_accuracy }}%</h2>
+        <p>Current model accuracy</p>
+        <div class="mini-grid">
+            <span><strong>{{ model_f1 }}%</strong><small>F1 Score</small></span>
+            <span><strong>KNN</strong><small>Algorithm</small></span>
+            <span><strong>4</strong><small>Features</small></span>
+            <span><strong>3</strong><small>Classes</small></span>
+        </div>
+    </div>
+</section>
+
+<section class="stats-row">
+    <div class="stat-card">
+        <span>Dataset</span>
+        <strong>Iris Species</strong>
+        <p>Kaggle/UCI flower measurements</p>
+    </div>
+    <div class="stat-card">
+        <span>Pipeline</span>
+        <strong>Scale + Train</strong>
+        <p>StandardScaler with KNN</p>
+    </div>
+    <div class="stat-card">
+        <span>Evaluation</span>
+        <strong>Accuracy + F1</strong>
+        <p>Confusion matrix ready</p>
+    </div>
+</section>
+
+<section class="predictor-layout" id="predictor">
+    <div class="form-card glass-card">
+        <div class="section-heading">
+            <span>AI Predictor</span>
+            <h2>Enter flower measurements</h2>
+            <p>Use values in centimeters. You can also click a sample button to auto-fill the form.</p>
+        </div>
+
+        {% if error %}
+            <div class="alert">{{ error }}</div>
+        {% endif %}
+
+        <div class="sample-buttons" aria-label="Sample flowers">
+            {% for name, values in sample_flowers.items() %}
+                <button type="button" class="sample-btn" data-values="{{ values|join(',') }}">{{ name }}</button>
+            {% endfor %}
+        </div>
+
+        <form action="{{ url_for('predict') }}" method="POST" class="prediction-form">
+            <div class="input-grid">
+                <label>
+                    <span>Sepal Length</span>
+                    <input name="sepal_length" type="number" step="0.1" min="0.1" max="15" placeholder="5.1" value="{{ old.sepal_length if old else '' }}" required>
+                    <small>Example: 5.1 cm</small>
+                </label>
+                <label>
+                    <span>Sepal Width</span>
+                    <input name="sepal_width" type="number" step="0.1" min="0.1" max="15" placeholder="3.5" value="{{ old.sepal_width if old else '' }}" required>
+                    <small>Example: 3.5 cm</small>
+                </label>
+                <label>
+                    <span>Petal Length</span>
+                    <input name="petal_length" type="number" step="0.1" min="0.1" max="15" placeholder="1.4" value="{{ old.petal_length if old else '' }}" required>
+                    <small>Example: 1.4 cm</small>
+                </label>
+                <label>
+                    <span>Petal Width</span>
+                    <input name="petal_width" type="number" step="0.1" min="0.1" max="15" placeholder="0.2" value="{{ old.petal_width if old else '' }}" required>
+                    <small>Example: 0.2 cm</small>
+                </label>
+            </div>
+
+            <button class="btn btn-primary full-btn" type="submit">Predict Flower Species</button>
+        </form>
+    </div>
+
+    <aside class="side-panel glass-card">
+        <div class="side-orb">✦</div>
+        <h3>What the model does</h3>
+        <p>
+            The model compares your new flower measurements with learned examples from the Iris dataset.
+            KNN classifies the new sample based on the nearest similar flowers.
+        </p>
+        <ul class="check-list">
+            <li>Loads and understands dataset</li>
+            <li>Splits training and testing data</li>
+            <li>Scales numerical features</li>
+            <li>Trains KNN classifier</li>
+            <li>Predicts new unseen flower data</li>
+        </ul>
+    </aside>
+</section>
+{% endblock %}

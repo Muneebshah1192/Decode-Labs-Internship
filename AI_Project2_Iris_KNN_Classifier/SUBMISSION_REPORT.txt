@@ -1,0 +1,58 @@
+Project Title:
+Iris Flower Classification Website Using KNN Algorithm
+
+Project Type:
+Data Classification Using Artificial Intelligence
+
+Objective:
+The objective of this project is to build a supervised machine learning classification system that predicts the species of an Iris flower based on four numerical measurements: sepal length, sepal width, petal length, and petal width.
+
+Dataset:
+The Iris dataset was used for this project. It contains flower measurement data for three classes:
+1. Iris-setosa
+2. Iris-versicolor
+3. Iris-virginica
+
+Each record contains four input features:
+1. Sepal Length
+2. Sepal Width
+3. Petal Length
+4. Petal Width
+
+Algorithm Used:
+K-Nearest Neighbors (KNN) classifier was used. KNN classifies a new data point by comparing it with the nearest similar data points in the training dataset.
+
+Project Workflow:
+1. Dataset was loaded and understood.
+2. Unnecessary columns were removed.
+3. Input features and target labels were separated.
+4. Target labels were encoded into numerical form.
+5. Dataset was split into training and testing sets.
+6. StandardScaler was applied to normalize feature values.
+7. KNN classifier was trained on the training data.
+8. Model was evaluated using accuracy score, F1 score, classification report, and confusion matrix.
+9. A Flask web interface was developed for user-friendly prediction.
+
+Website Features:
+1. Professional and responsive interface
+2. Flower measurement input form
+3. Sample flower buttons for quick testing
+4. Prediction result page
+5. Confidence score display
+6. Model status and health route
+7. JSON API endpoint for prediction
+8. Support for Colab trained model files
+
+Technologies Used:
+Python
+Flask
+Scikit-learn
+Pandas
+NumPy
+Joblib
+HTML5
+CSS3
+JavaScript
+
+Conclusion:
+This project helped in understanding the complete supervised learning classification pipeline, including data handling, train-test splitting, feature scaling, model training, model evaluation, and web deployment using Flask. The final website makes the AI model easy to use and suitable for professional internship submission.

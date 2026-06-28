@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional AI classification website for Iris flower prediction using KNN supervised learning.">
+    <title>{{ project_title }} | AI Classification Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page-glow glow-one"></div>
+    <div class="page-glow glow-two"></div>
+
+    <nav class="navbar">
+        <a class="brand" href="{{ url_for('index') }}" aria-label="Iris AI Classifier Home">
+            <span class="brand-mark">AI</span>
+            <span>
+                <strong>Iris Classifier</strong>
+                <small>DecodeLabs Project 2</small>
+            </span>
+        </a>
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}">Predict</a>
+            <a href="{{ url_for('about') }}">Project Details</a>
+            <a href="{{ url_for('health') }}" target="_blank">Health</a>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div>
+            <strong>Project 2: Data Classification Using AI</strong>
+            <span>Built with Flask, Scikit-learn, KNN, StandardScaler, and Kaggle Iris data.</span>
+        </div>
+        <p>Model Source: {{ model_source }} · Accuracy: {{ model_accuracy }}% · F1: {{ model_f1 }}%</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

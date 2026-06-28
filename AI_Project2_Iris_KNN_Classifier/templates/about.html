@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="about-hero glass-card">
+    <div>
+        <div class="eyebrow">Project Documentation</div>
+        <h1>Data Classification Using AI</h1>
+        <p>
+            This website is designed for an internship-level supervised learning project. It shows a full machine learning
+            pipeline: dataset loading, preprocessing, train-test split, feature scaling, KNN training, prediction, and evaluation.
+        </p>
+    </div>
+    <div class="about-score">
+        <strong>{{ model_accuracy }}%</strong>
+        <span>Accuracy</span>
+    </div>
+</section>
+
+<section class="timeline">
+    <article class="timeline-card">
+        <span>01</span>
+        <h3>Dataset Collection</h3>
+        <p>Iris dataset is downloaded from Kaggle and loaded with Pandas for inspection.</p>
+    </article>
+    <article class="timeline-card">
+        <span>02</span>
+        <h3>Data Preparation</h3>
+        <p>Features are separated from target labels. Species names are encoded into numerical form.</p>
+    </article>
+    <article class="timeline-card">
+        <span>03</span>
+        <h3>Train-Test Split</h3>
+        <p>The dataset is divided into training and testing sets to check how well the model performs on new data.</p>
+    </article>
+    <article class="timeline-card">
+        <span>04</span>
+        <h3>Feature Scaling</h3>
+        <p>StandardScaler normalizes all numerical features so KNN can compare distance fairly.</p>
+    </article>
+    <article class="timeline-card">
+        <span>05</span>
+        <h3>Model Training</h3>
+        <p>K-Nearest Neighbors learns patterns from flower measurement data.</p>
+    </article>
+    <article class="timeline-card">
+        <span>06</span>
+        <h3>Model Evaluation</h3>
+        <p>Accuracy, F1 score, classification report, and confusion matrix validate model quality.</p>
+    </article>
+</section>
+
+<section class="tech-section glass-card">
+    <div class="section-heading compact">
+        <span>Technology Stack</span>
+        <h2>Built for a professional submission</h2>
+    </div>
+    <div class="tech-grid">
+        <div>Python</div>
+        <div>Flask</div>
+        <div>Scikit-learn</div>
+        <div>KNN</div>
+        <div>StandardScaler</div>
+        <div>Joblib</div>
+        <div>HTML5</div>
+        <div>CSS3</div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="result-hero">
+    <div class="result-card glass-card">
+        <div class="success-badge">Prediction Complete</div>
+        <h1>{{ result.info.title or result.species }}</h1>
+        <p class="result-summary">{{ result.info.summary or 'The trained model classified your input flower sample.' }}</p>
+
+        {% if result.confidence is not none %}
+            <div class="confidence-circle">
+                <span>{{ result.confidence }}%</span>
+                <small>Top confidence</small>
+            </div>
+        {% endif %}
+
+        <div class="badge-row">
+            <span>{{ result.info.badge or 'AI classified' }}</span>
+            <span>{{ model_source }}</span>
+        </div>
+    </div>
+
+    <div class="result-details glass-card">
+        <h2>Input measurements</h2>
+        <div class="measurement-grid">
+            {% for label, value in values.items() %}
+                <div>
+                    <span>{{ label }}</span>
+                    <strong>{{ value }} cm</strong>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="confidence-section glass-card">
+    <div class="section-heading compact">
+        <span>Class Confidence</span>
+        <h2>Probability distribution</h2>
+    </div>
+
+    {% if result.confidences %}
+        <div class="bars">
+            {% for item in result.confidences %}
+                <div class="bar-row">
+                    <div class="bar-label">
+                        <span>{{ item.name }}</span>
+                        <strong>{{ item.percent }}%</strong>
+                    </div>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width: {{ item.percent }}%"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>This model does not expose probability scores, but the predicted class was returned successfully.</p>
+    {% endif %}
+
+    <div class="result-actions">
+        <a href="{{ url_for('index') }}#predictor" class="btn btn-primary">Try Another Prediction</a>
+        <a href="{{ url_for('about') }}" class="btn btn-secondary">View Project Details</a>
+    </div>
+</section>
+{% endblock %}
